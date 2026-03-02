@@ -1,0 +1,138 @@
+/* --- GLOBAL STYLE --- */
+:root {
+    --sidebar-width: 250px;
+}
+
+body {
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+
+/* --- LOGIN & REGISTER --- */
+.card-login {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.form-control-custom {
+    border-radius: 8px; 
+    padding: 12px;
+}
+
+/* --- LAYOUT UTAMA (WRAPPER & SIDEBAR) --- */
+#wrapper {
+    display: flex;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+#sidebar-wrapper {
+    min-width: var(--sidebar-width);
+    max-width: var(--sidebar-width);
+    min-height: 100vh;
+    background-color: #ffffff; 
+    border-right: 1px solid #dee2e6;
+    transition: margin 0.3s ease-out; 
+}
+
+#page-content-wrapper {
+    width: 100%;
+    flex: 1;
+}
+
+/* Logika Toggle Sidebar */
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -250px !important; 
+}
+
+/* Styling Menu Sidebar */
+.sidebar-heading {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #212529;   
+    letter-spacing: 1px;
+}
+
+.sidebar-group-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #adb5bd; 
+    margin: 20px 0 5px 0;
+    padding-left: 30px;
+    letter-spacing: 1px;
+}
+
+#sidebar-wrapper .list-group-item {
+    border: none;
+    padding: 12px 30px;
+    font-weight: 500;
+    color: #6c757d; 
+    transition: all 0.2s;
+}
+
+#sidebar-wrapper .list-group-item-action:hover {
+    background-color: #f8f9fa; 
+    color: #0d6efd; 
+    padding-left: 35px; 
+}
+
+#sidebar-wrapper .list-group-item.active {
+    background-color: transparent; 
+    color: #0d6efd; 
+    font-weight: bold;
+    border-right: 4px solid #0d6efd; 
+}
+
+/* --- DASHBOARD CARDS & TABLES --- */
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 0.5rem;
+}
+
+.table-custom th, .table-custom td {
+    vertical-align: middle;
+}
+
+/* --- EVENT CARD (Jadwal) --- */
+.event-card {
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.event-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+.card-header-custom {
+    background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    height: 100px;
+}
+
+.date-box {
+    background: white;
+    color: #0d6efd;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: -30px auto 10px;
+    position: relative;
+    z-index: 2;
+}
